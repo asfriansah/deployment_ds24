@@ -3,7 +3,7 @@ import pickle
 
 def main():
     background = """<div style = 'background-colour:black'; padding:13px>
-                    <h1 style = 'colour:white'>Model Deployment Loan Eligibility Prediction App</h1>
+                    <h1 style = 'colour:white'>Loan Eligibility Prediction</h1>
                     </div>"""
     st.markdown(background, unsafe_allow_html=True)
 
