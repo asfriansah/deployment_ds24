@@ -3,7 +3,7 @@ import pickle
 
 def main():
     background = """<div style = 'background-colour:black'; padding:13px>
-                    <h1 style = 'colour:white'>Loan Eligibility Prediction</h1>
+                    <h1 style = 'colour:white'>Loan Eligibility Prediction App</h1>
                     </div>"""
     st.markdown(background, unsafe_allow_html=True)
 
@@ -25,6 +25,22 @@ def main():
         result = predict(gender,married,dependent,education,self_employed,application_income,
                          coapplication_income,loan_amount,loan_amount_term,credit_history,property_area)
         st.success(f'You Are {result} for the loan')
+
+    st.markdown("""<style>
+                    [data-testid=stSidebar] {
+                        background-color: #b2cf99;
+                    }
+                </style>
+                """, unsafe_allow_html=True)
+    with st.sidebar:
+        
+        st.subheader('About')
+        st.markdown('<div style="text-align: justify;">This is an application for predicting whether a customer is eligible to get a loan or not. Predictions using the Random Forest algorithm model with an accuracy of 82.5%</div>', unsafe_allow_html=True)
+        st.sidebar.image('https://cdn-icons-png.flaticon.com/512/2660/2660135.png')
+        title_alignment = """<h4 style = 'text-align: center'>created 2023 by andri asfriansah</h4>"""
+                                
+        st.markdown(title_alignment, unsafe_allow_html=True)
+        #st.markdown('created by andri asfriansah',)
 
 with open('model/Random_Forest_model.pkl','rb') as file:
     RF_Model = pickle.load(file)
