@@ -42,7 +42,7 @@ def main():
         st.markdown(title_alignment, unsafe_allow_html=True)
         #st.markdown('created by andri asfriansah',)
 
-with open('model/Random_Forest_model.pkl','rb') as file:
+with open('model/Random_Forest_model(1).pkl','rb') as file:
     RF_Model = pickle.load(file)
 
 def predict(gender,married,dependent,education,self_employed,application_income,
@@ -64,3 +64,4 @@ def predict(gender,married,dependent,education,self_employed,application_income,
 
 if __name__ == "__main__":
     main()
+
